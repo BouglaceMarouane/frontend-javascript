@@ -375,20 +375,160 @@ Custom Webpack configurations for:
 - TypeScript-specific linting rules
 - Pre-configured formatting rules
 
+
+## 🐛 Troubleshooting
+
+### Common Issues & Solutions
+
+#### ❌ TypeScript Compilation Errors
+
+**Problem**: `Cannot find module` or `Property does not exist`
+```bash
+error TS2307: Cannot find module './interfaces'
+error TS2339: Property 'firstName' does not exist on type 'Student'
+```
+
+**Solution**:
+```bash
+# Check file paths and imports
+# Ensure all required properties are defined in interfaces
+# Verify TypeScript configuration
+npm run build -- --verbose
+```
+
+#### ❌ Webpack Build Failures
+
+**Problem**: `Module not found` or `Entry point not found`
+```bash
+ERROR in Entry module not found: Error: Can't resolve './js/main.ts'
+```
+
+**Solution**:
+```bash
+# Verify file structure
+ls -la js/
+# Check webpack.config.js entry point
+# Ensure main.ts exists in js/ directory
+```
+
+#### ❌ Development Server Issues
+
+**Problem**: Server won't start or port conflicts
+```bash
+Error: listen EADDRINUSE: address already in use :8080
+```
+
+**Solution**:
+```bash
+# Kill existing processes
+npx kill-port 8080
+# Or use different port
+npm start -- --port 3000
+```
+
+#### ❌ Type Errors in Advanced Tasks
+
+**Problem**: Brand pattern or namespace errors
+```bash
+error TS2322: Type 'number' is not assignable to type 'MajorCredits'
+```
+
+**Solution**:
+```typescript
+// Ensure proper type casting for brand patterns
+const majorCredits: MajorCredits = { credits: 3 as number & { __brand: 'MajorCredits' } };
+```
+
+### 🔍 Debugging Tips
+
+1. **Enable Verbose Logging**:
+   ```bash
+   npm run build -- --verbose
+   ```
+
+2. **Check TypeScript Configuration**:
+   ```bash
+   npx tsc --showConfig
+   ```
+
+3. **Validate Webpack Config**:
+   ```bash
+   npx webpack --config webpack.config.js --mode development
+   ```
+
+4. **Use TypeScript Playground**:
+   - Test code snippets at [TypeScript Playground](https://www.typescriptlang.org/play)
+
+### 📞 Getting Help
+
+| Resource | When to Use |
+|----------|-------------|
+| **ALX Community** | General questions about curriculum |
+| **TypeScript Docs** | Language-specific questions |
+| **Stack Overflow** | Technical implementation issues |
+| **GitHub Issues** | Project-specific bugs |
+
 ## 📖 Additional Resources
 
-1. [TypeScript Official Documentation](https://www.typescriptlang.org/docs/)
-2. [Webpack Guide for TypeScript](https://webpack.js.org/guides/typescript/)
-3. [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/)
-4. [ALX Learning Materials](https://intranet.alxswe.com/)
+### 📚 Essential Reading
 
-## 🚀 Getting Help
+| Resource | Description | Level |
+|----------|-------------|-------|
+| [TypeScript Handbook](https://www.typescriptlang.org/docs/) | Official documentation | All |
+| [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/) | Comprehensive guide | Intermediate+ |
+| [Webpack Guide](https://webpack.js.org/guides/typescript/) | Build configuration | Beginner+ |
+| [TypeScript Playground](https://www.typescriptlang.org/play) | Interactive learning | All |
 
-If you encounter issues with:
-- TypeScript compilation errors
-- Webpack configuration problems
-- Understanding TypeScript concepts
+### 🎥 Video Tutorials
 
-Check the troubleshooting guide in each task directory or consult the ALX community forums.
+- [TypeScript Crash Course](https://www.youtube.com/watch?v=BwuLxPH8IDs) - Traversy Media
+- [Advanced TypeScript Patterns](https://www.youtube.com/watch?v=2l1Ki5L8Rcs) - Ben Awad
+- [Webpack + TypeScript Setup](https://www.youtube.com/watch?v=TOb1c39m64A) - Academind
+
+### 🛠️ Tools & Extensions
+
+#### VS Code Extensions
+- **TypeScript Importer** - Auto-import management
+- **TypeScript Hero** - Code organization
+- **Error Lens** - Inline error display
+- **Bracket Pair Colorizer** - Code readability
+
+#### Online Tools
+- [TypeScript Playground](https://www.typescriptlang.org/play) - Code testing
+- [AST Explorer](https://astexplorer.net/) - Code analysis
+- [TypeScript Error Translator](https://ts-error-translator.vercel.app/) - Error explanations
+
+## 🤝 Contributing
+
+### How to Contribute
+
+1. **Fork the repository**
+2. **Create a feature branch**: `git checkout -b feature/improvement`
+3. **Make your changes** with clear commit messages
+4. **Test thoroughly** across all tasks
+5. **Submit a pull request** with detailed description
+
+### Contribution Guidelines
+
+- ✅ Follow existing code style
+- ✅ Add comments for complex logic
+- ✅ Update documentation as needed
+- ✅ Test all changes before submitting
+- ❌ Don't modify task requirements
+- ❌ Don't break existing functionality
+
+## 📄 License
+
+This project is part of the **ALX Frontend JavaScript curriculum**. All code is available for educational purposes under the MIT License.
 
 ---
+
+<div align="center">
+
+**⭐ Star this repository if you found it helpful!**
+
+Made with ❤️ for the ALX community
+
+[🔝 Back to Top](#-typescript-assessment--alx-frontend-javascript)
+
+</div>
