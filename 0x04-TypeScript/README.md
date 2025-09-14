@@ -459,15 +459,6 @@ const majorCredits: MajorCredits = { credits: 3 as number & { __brand: 'MajorCre
 4. **Use TypeScript Playground**:
    - Test code snippets at [TypeScript Playground](https://www.typescriptlang.org/play)
 
-### 📞 Getting Help
-
-| Resource | When to Use |
-|----------|-------------|
-| **ALX Community** | General questions about curriculum |
-| **TypeScript Docs** | Language-specific questions |
-| **Stack Overflow** | Technical implementation issues |
-| **GitHub Issues** | Project-specific bugs |
-
 ## 📖 Additional Resources
 
 ### 📚 Essential Reading
@@ -517,17 +508,11 @@ const majorCredits: MajorCredits = { credits: 3 as number & { __brand: 'MajorCre
 - ❌ Don't modify task requirements
 - ❌ Don't break existing functionality
 
-## 📄 License
-
-This project is part of the **ALX Frontend JavaScript curriculum**. All code is available for educational purposes under the MIT License.
-
 ---
 
 <div align="center">
 
 **⭐ Star this repository if you found it helpful!**
-
-Made with ❤️ for the ALX community
 
 [🔝 Back to Top](#-typescript-assessment--alx-frontend-javascript)
 
